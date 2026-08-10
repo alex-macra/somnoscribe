@@ -17,11 +17,11 @@
     "seed:refs": "tsx scripts/seedReferenceRules.ts"
   },
   "dependencies": {
-    "better-sqlite3": "^13.0.2",
+    "better-sqlite3": "^13.0.3",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "express-rate-limit": "^8.1.0",
+    "express-rate-limit": "^8.6.2",
     "helmet": "^8.1.0",
     "multer": "^2.2.0",
     "openai": "^7.4.0",
@@ -37,7 +37,7 @@
     "@types/node": "^26.1.2",
     "@types/supertest": "^7.2.1",
     "supertest": "^7.0.0",
-    "tsx": "^4.23.5",
+    "tsx": "^4.23.9",
     "typescript": "^7.0.2",
     "vitest": "^4.1.10"
   }
