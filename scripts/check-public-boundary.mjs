@@ -89,6 +89,27 @@ const allowedBinaryFiles = new Set(['docs/images/review-workspace.png']);
 
 const privateMarkers = ['shared-core', '@shared/', 'file:../../', 'PlanForProjects'];
 
+// SOMNOtouch is a registered trademark of SOMNOmedics GmbH. It may only appear
+// in nominative interoperability contexts in these specific files.
+const trademarkMark = 'somnotouch';
+const allowedTrademarkFiles = new Set([
+  '.gitignore',
+  'CONTRIBUTING.md',
+  'api/e2e/rate-limit.spec.ts',
+  'api/src/prompts.ts',
+  'NOTICE',
+  'preprocessor/candidate_windows.py',
+  'preprocessor/channels.py',
+  'preprocessor/deidentify.py',
+  'preprocessor/edf_parser.py',
+  'preprocessor/evidence_packager.py',
+  'preprocessor/parsers/domino_pdf.py',
+  'preprocessor/tests/test_study_metrics.py',
+  'README.md',
+  'scripts/check-public-boundary.test.mjs',
+  'THIRD_PARTY_NOTICES.md',
+]);
+
 const secretPatterns = [
   /-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/,
   /\bAKIA[0-9A-Z]{16}\b/,
@@ -165,6 +186,18 @@ function checkText(file, failures) {
     for (const marker of privateMarkers) {
       if (content.toLowerCase().includes(marker.toLowerCase()))
         failures.push(`${file}: private marker detected`);
+    }
+  }
+
+  // Trademark check: SOMNOtouch may only appear in nominative interoperability
+  // contexts in specific files
+  if (file !== selfPath) {
+    const lowerContent = content.toLowerCase();
+    if (lowerContent.includes(trademarkMark)) {
+      const normalized = file.split(path.sep).join('/');
+      if (!allowedTrademarkFiles.has(normalized)) {
+        failures.push(`${file}: trademark marker detected outside allowed files`);
+      }
     }
   }
   for (const pattern of secretPatterns) {
