@@ -25,6 +25,13 @@ npm run test:e2e
 
 Browser tests use the guarded synthetic model adapter and must not call a live provider.
 
+## Product naming
+
+The product is named **Somnoscribe**. The registered mark SOMNOtouch may only appear in
+nominative interoperability references in files listed in `NOTICE`, and never in the
+product position (e.g., " Somnoscribe's X" not " SOMNOtouch's X"). See `NOTICE` for the
+full trademark notice and no-affiliation statement.
+
 ## Pull requests
 
 - Explain the user-visible and safety impact.
