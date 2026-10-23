@@ -7,4 +7,4 @@ numpy==2.5.1
 pydantic==2.13.4
 matplotlib==3.11.1
 pypdf==6.15.0
-pillow==12.3.0
+pillow==13.0.0
