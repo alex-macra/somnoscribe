@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 import { test, expect } from '@playwright/test';
 
-// somnotouch's rate limiter defaults to skipLoopback:true; this suite sets
+// Somnoscribe's rate limiter defaults to skipLoopback:true; this suite sets
 // TEST_RATE_LIMIT_INCLUDE_LOOPBACK=1 to override so loopback bursts reach 429.
 
 test.describe('global rate limiter', () => {

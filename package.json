@@ -11,6 +11,7 @@
     "test:e2e:report": "playwright show-report",
     "screenshots": "playwright test --project=screenshots",
     "check:boundary": "node scripts/check-public-boundary.mjs",
+    "test:boundary": "node --test scripts/check-public-boundary.test.mjs",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",

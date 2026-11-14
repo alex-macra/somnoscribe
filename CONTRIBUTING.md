@@ -13,7 +13,7 @@ Use only deterministic synthetic fixtures. Never add clinical artifacts, real id
 ## Checks
 
 ```bash
-npm run check:boundary
+npm run check:boundary && npm run test:boundary
 npm run lint && npm run format:check
 preprocessor/.venv/bin/ruff check preprocessor
 preprocessor/.venv/bin/ruff format --check preprocessor
@@ -24,6 +24,13 @@ npm run test:e2e
 ```
 
 Browser tests use the guarded synthetic model adapter and must not call a live provider.
+
+## Product naming
+
+The product is named **Somnoscribe**. The registered mark SOMNOtouch may only appear in
+nominative interoperability references in files allowlisted in
+`scripts/check-public-boundary.mjs`, and never in the product position (e.g., "Somnoscribe's X"
+not "SOMNOtouch's X"). See `NOTICE` for the full trademark notice and no-affiliation statement.
 
 ## Pull requests
 

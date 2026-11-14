@@ -2,6 +2,21 @@
 
 This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html). Before `1.0.0`, interfaces may change in any release.
 
+## [Unreleased]
+
+### Added
+
+- The public-boundary check rejects the third-party trademark outside an explicit allowlist of interoperability files, with tests (`npm run test:boundary`).
+
+### Changed
+
+- Updated `pypdf` in the preprocessor from 6.14.2 to 6.15.0 (#16).
+- Contributing guide documents the product-naming rule for the third-party mark.
+
+### Fixed
+
+- An end-to-end test now uses the Somnoscribe name instead of the third-party mark.
+
 ## [0.2.0-alpha.1] - 2026-08-05
 
 First public alpha of the self-hosted, evidence-linked review workspace.
@@ -21,3 +36,6 @@ First public alpha of the self-hosted, evidence-linked review workspace.
 - Database schemas have no upgrade path. Delete `api/data/cases.sqlite` when moving between alpha versions.
 - The tool is clinician-assist research software, not an autonomous diagnostic or production system. Read [Safety](SAFETY.md).
 - The open-source license is [AGPL-3.0-only](LICENSE); [commercial terms](LICENSE-COMMERCIAL.md) are separate.
+
+[Unreleased]: https://github.com/alex-macra/somnoscribe/compare/v0.2.0-alpha.1...HEAD
+[0.2.0-alpha.1]: https://github.com/alex-macra/somnoscribe/releases/tag/v0.2.0-alpha.1
